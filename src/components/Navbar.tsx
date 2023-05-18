@@ -15,7 +15,7 @@ const NavItem = ({ href, text }: { href: string; text: string }) => {
 
 const Navbar = () => {
    return (
-      <div className='w-full h-20 bg-white shadow-md flex justify-around items-center relative'>
+      <div className='w-full h-20 bg-white shadow-md flex justify-around items-center fixed top-0 z-10'>
          <div className='w-[120px] h-[140px] bg-cyan-900' />
          <ul className='flex items-center justify-center mx-3'>
             <NavItem href='/' text='صفحه اصلی' />
