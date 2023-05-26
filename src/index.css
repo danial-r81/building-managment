@@ -14,3 +14,7 @@
 * {
    font-family: 'BYekan' !important;
 }
+
+.no-scroll::-webkit-scrollbar {
+   display: none;
+}

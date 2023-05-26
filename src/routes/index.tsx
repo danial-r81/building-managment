@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { App, GetCode, Login, MainLayout, Register } from '../pages';
+import { Home, GetCode, Login, MainLayout, Register, Poll } from '../pages';
 
 export const router = createBrowserRouter([
    {
@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
       children: [
          {
             path: '/',
-            element: <App />,
+            element: <Home />,
          },
          {
             path: '/login',
@@ -22,6 +22,10 @@ export const router = createBrowserRouter([
          {
             path: '/get-code',
             element: <GetCode />,
+         },
+         {
+            path: '/poll',
+            element: <Poll />,
          },
       ],
    },
