@@ -26,7 +26,16 @@ const FormContainer = ({
                initialValues={initialValues}
                validationSchema={validationSchema}
                onSubmit={onSubmit}>
-               <Form>{children}</Form>
+               <Form>
+                  {children}
+                  <div className='w-full flex justify-center items-center mt-4'>
+                     <button
+                        className='bg-slate-800 w-[50%] p-3 text-white rounded-md'
+                        type='submit'>
+                        {title}
+                     </button>
+                  </div>
+               </Form>
             </Formik>
          </div>
       </div>

@@ -13,7 +13,7 @@ const Login = () => {
          onSubmit={(values: InitialValues) => console.log(values)}>
          <Input name='username' placeholder='نام کاربری' />
          <Input name='password' placeholder='رمز عبور' />
-         <Button text='ورود' />
+         {/* <Button text='ورود' /> */}
          <div className='w-full justify-center items-center'>
             <p className='text-gray-500 text-center my-2'>
                اگر حساب کاربری ندارید از{' '}

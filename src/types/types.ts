@@ -1,6 +1,27 @@
 import { ReactNode } from 'react';
 import * as Yup from 'yup';
 
+export interface User {
+   instances: {
+      id: number;
+      is_manager: boolean;
+      is_resident: boolean;
+      last_login: null;
+      is_superuser: boolean;
+      username: string;
+      first_name: string;
+      last_name: string;
+      email: string;
+      is_staff: boolean;
+      is_active: boolean;
+      date_joined: string;
+      phone: null;
+      role: string;
+      is_phone_activated: boolean;
+      is_email_activated: boolean;
+   };
+}
+
 export interface LoginInitialValues {
    username: string;
    password: string;
@@ -19,10 +40,7 @@ export interface GetCodeInitialValues {
    code: string;
 }
 
-export type InitialValues =
-   | LoginInitialValues
-   | RegisterInitialValues
-   | GetCodeInitialValues;
+export type InitialValues = LoginInitialValues | GetCodeInitialValues;
 
 export interface LoginValidationSchema {
    username: string;

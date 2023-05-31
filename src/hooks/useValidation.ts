@@ -56,20 +56,12 @@ const useValidation = (action: Action): ReturnType | undefined => {
          return [initialValues, validationSchema];
       case 'register':
          validationSchema = Yup.object().shape({
-            firstName,
-            lastName,
             username,
             password,
-            phoneNumber,
-            email,
          });
          initialValues = {
-            firstName: '',
-            lastName: '',
             username: '',
             password: '',
-            phoneNumber: '',
-            email: '',
          };
          return [initialValues, validationSchema];
       case 'code':
