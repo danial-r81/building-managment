@@ -1,16 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FormContainer from '../components/FormContainer';
-import { InitialValues } from '../types/types';
+import { AuthInitialValues } from '../types/types';
 import Input from '../components/Input';
-import Button from '../components/ui/Button';
+import { useAppDispatch } from '../hooks/redux-hooks';
+import { userLoginHandler } from '../redux/features/user/userSlice';
 
 const Login = () => {
+   const dispatch = useAppDispatch();
+   const navigate = useNavigate();
    return (
       <FormContainer
          action='login'
          title='ورود'
-         onSubmit={(values: InitialValues) => console.log(values)}>
+         onSubmit={(values: AuthInitialValues) =>
+            dispatch(userLoginHandler({ navigate, userInfo: values }))
+         }>
          <Input name='username' placeholder='نام کاربری' />
          <Input name='password' placeholder='رمز عبور' />
          {/* <Button text='ورود' /> */}

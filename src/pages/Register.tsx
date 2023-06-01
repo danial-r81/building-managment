@@ -1,19 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FormContainer from '../components/FormContainer';
-import { InitialValues } from '../types/types';
+import { AuthInitialValues } from '../types/types';
 import Input from '../components/Input';
-import { useAuthHandler } from '../redux/features/user/userSlice';
+import { userRegisterHandler } from '../redux/features/user/userSlice';
 import { useAppDispatch } from '../hooks/redux-hooks';
 
 const Register = () => {
    const dispatch = useAppDispatch();
+   const navigate = useNavigate();
    return (
       <FormContainer
          action='register'
          title='ثبت نام'
-         onSubmit={(values: InitialValues) =>
-            dispatch(useAuthHandler({ action: 'register', userInfo: values }))
+         onSubmit={(values: AuthInitialValues) =>
+            dispatch(userRegisterHandler({ navigate, userInfo: values }))
          }>
          <Input name='username' placeholder='نام کاربری' />
          <Input name='password' placeholder='رمز عبور' />

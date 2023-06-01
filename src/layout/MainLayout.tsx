@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 const MainLayout = () => {
    return (
       <div className='w-full h-screen relative'>
-         <ToastContainer position='top-right' />
+         <ToastContainer position='top-right' theme='colored' />
          <Navbar />
          <Outlet />
       </div>

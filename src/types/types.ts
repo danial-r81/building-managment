@@ -22,25 +22,26 @@ export interface User {
    };
 }
 
-export interface LoginInitialValues {
+export interface AuthInitialValues {
    username: string;
    password: string;
 }
 
-export interface RegisterInitialValues {
-   firstName: string;
-   lastName: string;
-   username: string;
-   password: string;
-   phoneNumber: string;
-   email: string;
-}
+// export interface LoginInitialValues {
+//    username: string;
+//    password: string;
+// }
+
+// export interface RegisterInitialValues {
+//    username: string;
+//    password: string;
+// }
 
 export interface GetCodeInitialValues {
    code: string;
 }
 
-export type InitialValues = LoginInitialValues | GetCodeInitialValues;
+// export type InitialValues = LoginInitialValues | GetCodeInitialValues;
 
 export interface LoginValidationSchema {
    username: string;
@@ -90,7 +91,7 @@ export type ValidationSchema =
 
 export interface FormContainerProps {
    children: ReactNode;
-   initialValues: RegisterInitialValues | LoginInitialValues;
+   initialValues: AuthInitialValues;
    validationSchema: Yup.ObjectSchema<
       ValidationSchema,
       Yup.AnyObject,
